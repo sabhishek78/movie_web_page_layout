@@ -1,0 +1,85 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+.movie-card{
+    height:100%;
+    position: relative;
+    margin:20px;
+}
+.image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.overlay {
+    position: absolute;
+    bottom: 0;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5); /* Black see-through */
+    color: #f1f1f1;
+    width: 100%;
+    transition: .5s ease;
+    opacity:0;
+    color: white;
+    font-size: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+/* When you mouse over the container, fade in the overlay title */
+.movie-card:hover .overlay {
+    opacity: 1;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 2px 4px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    font-size: 15px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 20px;
+}
+#hoverbar{
+    height:30%;
+    width:100%;
+    background-color: white;
+    visibility:hidden;
+
+    bottom: 0;
+}
+#content:hover > #hoverbar{
+    visibility:visible;
+}
+h1 {
+    font-size: 15px;
+    font-family: "Poppins";
+    font-weight: normal;
+
+}
+.overview {
+    font-size: 10px;
+    font-family: "Poppins";
+    font-weight: normal;
+     text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 50ch;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+img {
+    border-radius: 5%;
+}
