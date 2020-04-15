@@ -32,7 +32,10 @@ class Grid extends React.Component {
         } else {
             return (
                 <div>
-                    <Link to="/Search" className="btn btn-primary">Search</Link>
+                    <div class="searchBar">
+                        <Link to="/Search" className="button">Search</Link>
+                    </div>
+
                     <div className="grid">
 
 

@@ -3,8 +3,7 @@ import './search.css';
 import {BrowserRouter as Router,Link,Switch,Route} from "react-router-dom";
 import MovieCard from "../MovieCard";
  const api = "&api_key=74c8f4090bcdc0cee9cda4752bd58557";
-// const endpoint = `https://api.themoviedb.org/3/search/movie?query=${search}${api}`;
-// const poster = "https://image.tmdb.org/t/p/w600/";
+
 class Search extends React.Component {
 
     constructor(props){
@@ -13,7 +12,8 @@ class Search extends React.Component {
         this.state = {
             items: [],
             isLoaded: false,
-            username : ''
+            searchString : '',
+            searchMade:false,
         }
 
         this.updateInput = this.updateInput.bind(this);
@@ -21,43 +21,60 @@ class Search extends React.Component {
     }
 
     updateInput(event){
-        this.setState({username : event.target.value})
+        this.setState({searchString : event.target.value})
     }
 
 
     handleSubmit(){
-        console.log('Your input value is: ' + this.state.username)
-        fetch(`https://api.themoviedb.org/3/search/movie?query=${this.state.username}${api}`)
+        console.log('Your input value is: ' + this.state.searchString)
+        fetch(`https://api.themoviedb.org/3/search/movie?query=${this.state.searchString}${api}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data.results);
                 this.setState({
                     isLoaded: true,
                     items: data.results,
+                    searchMade:true
                 });
 
             });
     }
     render(){
-        return (
-            <div>
+        if(this.state.items.length===0 && this.state.searchMade){
+            return(
                 <div>
-                    <input type="text" onChange={this.updateInput}></input>
-                    <input type="submit" onClick={this.handleSubmit} ></input>
+                    <div className="searchBar">
+                        <input type="text" onChange={this.updateInput}></input>
+                        <input type="Submit" onClick={this.handleSubmit} className="button"></input>
+                    </div>
+                    <div class="Nothing">
+                        Nothing Found. Please change your search query
+                    </div>
                 </div>
-                <div className="grid">
-                    {this.state.items.map((movie, index) => {
-                        return <MovieCard title={movie.original_title}
-                                          url={"http://image.tmdb.org/t/p/w185" + movie.poster_path}
-                                          overview={movie.overview}
-                                          rating={movie.vote_average}
-                                          id={movie.id}
-                        />
-                    })}
-                </div>
-            </div>
 
-        );
+            );
+        }
+        else{
+            return (
+                <div>
+                    <div class="searchBar">
+                        <input type="text" onChange={this.updateInput}></input>
+                        <input type="Submit" onClick={this.handleSubmit} className="button"></input>
+                    </div>
+                    <div className="grid">
+                        {this.state.items.map((movie, index) => {
+                            return <MovieCard title={movie.original_title}
+                                              url={"http://image.tmdb.org/t/p/w185" + movie.poster_path}
+                                              overview={movie.overview}
+                                              rating={movie.vote_average}
+                                              id={movie.id}
+                            />
+                        })}
+                    </div>
+                </div>
+            );
+        }
+
     }
 
 }
