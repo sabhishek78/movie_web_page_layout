@@ -10,7 +10,7 @@ function App() {
       <Router>
           <div className="App">
               <Switch>
-                  <Route path='/moviedetail/' component={MovieDetail}/>
+                  <Route path='/moviedetail/:id' component={MovieDetail}/>
                   <Route path='/' component={Grid}/>
               </Switch>
 
