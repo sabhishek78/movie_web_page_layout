@@ -1,6 +1,7 @@
 import React from "react";
 import MovieCard from "../MovieCard";
 import "./styles.css";
+import {BrowserRouter as Router,Link,Switch,Route} from "react-router-dom";
 
 class Grid extends React.Component {
 
@@ -30,16 +31,22 @@ class Grid extends React.Component {
             return <div>Loading ... </div>;
         } else {
             return (
-                <div className="grid">
-                    {this.state.items.map((movie, index) => {
-                        return <MovieCard title={movie.original_title}
-                                          url={"http://image.tmdb.org/t/p/w185" + movie.poster_path}
-                                          overview={movie.overview}
-                                          rating={movie.vote_average}
-                                          id={movie.id}
-                        />
-                    })}
+                <div>
+                    <Link to="/Search" className="btn btn-primary">Search</Link>
+                    <div className="grid">
+
+
+                        {this.state.items.map((movie, index) => {
+                            return <MovieCard title={movie.original_title}
+                                              url={"http://image.tmdb.org/t/p/w185" + movie.poster_path}
+                                              overview={movie.overview}
+                                              rating={movie.vote_average}
+                                              id={movie.id}
+                            />
+                        })}
+                    </div>
                 </div>
+
             );
         }
 
