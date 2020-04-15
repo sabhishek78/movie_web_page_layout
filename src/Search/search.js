@@ -13,7 +13,7 @@ class Search extends React.Component {
             items: [],
             isLoaded: false,
             searchString : '',
-            searchMade:false,
+            searchMade:false
         }
 
         this.updateInput = this.updateInput.bind(this);
@@ -26,6 +26,10 @@ class Search extends React.Component {
 
 
     handleSubmit(){
+        this.setState({
+            searchMade:true
+
+        });
         console.log('Your input value is: ' + this.state.searchString)
         fetch(`https://api.themoviedb.org/3/search/movie?query=${this.state.searchString}${api}`)
             .then(res => res.json())
@@ -34,13 +38,13 @@ class Search extends React.Component {
                 this.setState({
                     isLoaded: true,
                     items: data.results,
-                    searchMade:true
+
                 });
 
             });
     }
     render(){
-        if(this.state.items.length===0 && this.state.searchMade){
+        if(this.state.items.length===0 && this.state.isLoaded){
             return(
                 <div>
                     <div className="searchBar">
@@ -49,6 +53,20 @@ class Search extends React.Component {
                     </div>
                     <div class="Nothing">
                         Nothing Found. Please change your search query
+                    </div>
+                </div>
+
+            );
+        }
+        else if(this.state.searchMade && !this.state.isLoaded){
+            return(
+                <div>
+                    <div className="searchBar">
+                        <input type="text" onChange={this.updateInput}></input>
+                        <input type="Submit" onClick={this.handleSubmit} className="button"></input>
+                    </div>
+                    <div class="Nothing">
+                        Loading ...
                     </div>
                 </div>
 
