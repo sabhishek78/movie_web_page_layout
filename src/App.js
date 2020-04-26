@@ -1,7 +1,6 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Grid from "./Grid";
+import HomePage from "./HomePage";
 import Search from "./Search/search";
 import {BrowserRouter as Router,Link,Switch,Route} from "react-router-dom";
 
@@ -13,7 +12,7 @@ function App() {
               <Switch>
                   <Route path='/search' component={Search}/>
                   <Route path='/moviedetail/:id' component={MovieDetail}/>
-                  <Route path='/' component={Grid}/>
+                  <Route path='/' component={HomePage}/>
               </Switch>
 
           </div>

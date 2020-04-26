@@ -1,9 +1,19 @@
 import React from "react";
-import MovieCard from "../MovieCard";
+
+import MovieGrid from "../MovieGrid";
 import "./styles.css";
+import CircularProgress from '@material-ui/core/CircularProgress';
 import {BrowserRouter as Router,Link,Switch,Route} from "react-router-dom";
 
-class Grid extends React.Component {
+// Correctness - 55/80
+// - Routes and functionality working as expected but deducting marks for fit and finish
+// - You are not re using HomePage Component which you should be doing
+// - Details page is not opening, getting failed to fetch error
+//
+// Code Quality - 15/20
+// - Component hierarchy is correct
+// - remove unused variables and check console for error messages
+class HomePage extends React.Component {
 
     constructor(props) {
         super(props);
@@ -28,32 +38,23 @@ class Grid extends React.Component {
 
     render() {
         if (!this.state.isLoaded) {
-            return <div>Loading ... </div>;
+            return <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                backgroundColor:"black"
+            }}><CircularProgress /> </div>;
         } else {
             return (
                 <div>
                     <div class="searchBar">
                         <Link to="/Search" className="button">Search</Link>
                     </div>
-
-                    <div className="grid">
-
-
-                        {this.state.items.map((movie, index) => {
-                            return <MovieCard title={movie.original_title}
-                                              url={"http://image.tmdb.org/t/p/w185" + movie.poster_path}
-                                              overview={movie.overview}
-                                              rating={movie.vote_average}
-                                              id={movie.id}
-                            />
-                        })}
-                    </div>
+                    <MovieGrid items={this.state.items}/>
                 </div>
-
             );
         }
-
     }
 }
 
-export default Grid
+export default HomePage

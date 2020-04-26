@@ -1,5 +1,6 @@
 import React from "react";
 import './moviedetail.css';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import {BrowserRouter as Router,Link,Switch,Route} from "react-router-dom";
 class MovieDetail extends React.Component {
     constructor(props) {
@@ -27,7 +28,7 @@ class MovieDetail extends React.Component {
         const movie=this.state.movie;
         if(movie!==null){
             return (
-                <div className="container">
+                <div className="container" >
                     <div className="box">
                         <img class="background-image" src={'https://image.tmdb.org/t/p/original/'+
                         movie.backdrop_path}/>
@@ -54,8 +55,8 @@ class MovieDetail extends React.Component {
             );
         }
         else{
-            return (<div>
-                Loading...
+            return (<div className="loading" >
+               <CircularProgress size={100}/>
             </div>)
         }
     }

@@ -6,6 +6,13 @@
     border-radius:0;
 
 }
+.loading{
+    position : absolute;
+    left     : 50%;
+    top      : 50%;
+    display:flex;
+
+}
 .poster-image{
     width:100%;
     height:100%;

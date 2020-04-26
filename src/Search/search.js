@@ -2,6 +2,7 @@ import React from "react";
 import './search.css';
 import {BrowserRouter as Router,Link,Switch,Route} from "react-router-dom";
 import MovieCard from "../MovieCard";
+import MovieGrid from "../MovieGrid";
  const api = "&api_key=74c8f4090bcdc0cee9cda4752bd58557";
 
 class Search extends React.Component {
@@ -79,16 +80,7 @@ class Search extends React.Component {
                         <input type="text" onChange={this.updateInput}></input>
                         <input type="Submit" onClick={this.handleSubmit} className="button"></input>
                     </div>
-                    <div className="grid">
-                        {this.state.items.map((movie, index) => {
-                            return <MovieCard title={movie.original_title}
-                                              url={"http://image.tmdb.org/t/p/w185" + movie.poster_path}
-                                              overview={movie.overview}
-                                              rating={movie.vote_average}
-                                              id={movie.id}
-                            />
-                        })}
-                    </div>
+                    <MovieGrid items={this.state.items}/>
                 </div>
             );
         }
