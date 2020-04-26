@@ -38,12 +38,7 @@ class HomePage extends React.Component {
 
     render() {
         if (!this.state.isLoaded) {
-            return <div style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                backgroundColor:"black"
-            }}><CircularProgress /> </div>;
+            return <div className="loading" ><CircularProgress size={100}/> </div>;
         } else {
             return (
                 <div>
