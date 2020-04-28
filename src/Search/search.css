@@ -1,6 +1,19 @@
 .searchBar{
     background-color: black;
+    min-width:100%;
+    min-height:100%;
 }
 .Nothing{
     font-size: 30px;
+}
+.fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: auto;
+    background: black;
+    padding-top: 50px;
+
 }

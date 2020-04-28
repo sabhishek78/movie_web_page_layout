@@ -37,7 +37,7 @@ class HomePage extends React.Component {
 
     render() {
         if (!this.state.isLoaded) {
-            return <div className="loading" ><CircularProgress size={100}/> </div>;
+            return <div className="fullscreen" ><CircularProgress size={100}/> </div>;
         } else {
             return (
                 <div>

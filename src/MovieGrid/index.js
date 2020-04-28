@@ -13,26 +13,6 @@ import {BrowserRouter as Router, Link, Switch, Route} from "react-router-dom";
 // - remove unused variables and check console for error messages
 class MovieGrid extends React.Component {
 
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         items: [],
-    //         isLoaded: false,
-    //     };
-    // }
-    //
-    // componentDidMount() {
-    //     fetch('https://api.themoviedb.org/3/discover/movie?api_key=74c8f4090bcdc0cee9cda4752bd58557&sort_by=revenue.desc')
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             console.log(data.results);
-    //             this.setState({
-    //                 isLoaded: true,
-    //                 items: data.results,
-    //             });
-    //
-    //         });
-    // }
 
     render() {
         return(

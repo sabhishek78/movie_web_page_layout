@@ -28,13 +28,13 @@ class Search extends React.Component {
     }
     render(){
         return(
-                <div>
-                    <div className="searchBar">
-                        <input type="text" onChange={this.updateInput}></input>
+                <div className="fullscreen">
+
+                        <input type="text" onChange={this.updateInput} style={{ width: "300px" ,height: "40px" ,fontSize: 25}}></input>
                         <Link to={this.state.path}>
                         <button className="button">Search</button>
                         </Link>
-                    </div>
+
                 </div>
             );
     }
