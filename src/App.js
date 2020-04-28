@@ -10,7 +10,9 @@ function App() {
       <Router>
           <div className="App">
               <Switch>
+                  <Route path='/search/:query' component={HomePage}/>
                   <Route path='/search' component={Search}/>
+
                   <Route path='/moviedetail/:id' component={MovieDetail}/>
                   <Route path='/' component={HomePage}/>
               </Switch>

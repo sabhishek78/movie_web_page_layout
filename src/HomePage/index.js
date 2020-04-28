@@ -5,14 +5,6 @@ import "./styles.css";
 import CircularProgress from '@material-ui/core/CircularProgress';
 import {BrowserRouter as Router,Link,Switch,Route} from "react-router-dom";
 
-// Correctness - 55/80
-// - Routes and functionality working as expected but deducting marks for fit and finish
-// - You are not re using HomePage Component which you should be doing
-// - Details page is not opening, getting failed to fetch error
-//
-// Code Quality - 15/20
-// - Component hierarchy is correct
-// - remove unused variables and check console for error messages
 class HomePage extends React.Component {
 
     constructor(props) {
@@ -20,11 +12,18 @@ class HomePage extends React.Component {
         this.state = {
             items: [],
             isLoaded: false,
+            query:this.props.match != null ? this.props.match.params.query : null,
         };
     }
 
     componentDidMount() {
-        fetch('https://api.themoviedb.org/3/discover/movie?api_key=74c8f4090bcdc0cee9cda4752bd58557&sort_by=revenue.desc')
+        let url;
+        if (this.state.query == null)
+            url = `https://api.themoviedb.org/3/discover/movie?api_key=74c8f4090bcdc0cee9cda4752bd58557&sort_by=revenue.desc`;
+        else {
+            url = `https://api.themoviedb.org/3/search/movie?query=${this.state.query}&api_key=74c8f4090bcdc0cee9cda4752bd58557`;
+        }
+        fetch(url)
             .then(res => res.json())
             .then(data => {
                 console.log(data.results);

@@ -12,10 +12,10 @@ class MovieDetail extends React.Component {
         };
     }
     componentDidMount() {
-        this.getPosterPath()
+        this.getMovieDetails()
     }
 
-    async getPosterPath() {
+    async getMovieDetails() {
         var poster_path;
         var movieDataLink="http://api.themoviedb.org/3/movie/"+this.state.id.toString()+"?api_key=74c8f4090bcdc0cee9cda4752bd58557";
         var res=await fetch(movieDataLink);
