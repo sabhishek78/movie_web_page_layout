@@ -15,7 +15,8 @@ class Search extends React.Component {
             items: [],
             isLoaded: false,
             searchString : '',
-            searchMade:false
+            searchMade:false,
+            path:'/Search'
         }
 
         this.updateInput = this.updateInput.bind(this);
@@ -23,14 +24,14 @@ class Search extends React.Component {
     }
 
     updateInput(event){
-        this.setState({searchString : event.target.value})
+        this.setState({searchString : event.target.value, path:'/Search'+'/'+event.target.value,})
     }
 
 
     handleSubmit(){
         this.setState({
-            searchMade:true
-
+            searchMade:true,
+            // path:this.state.path+this.state.searchString,
         });
         console.log('Your input value is: ' + this.state.searchString)
         fetch(`https://api.themoviedb.org/3/search/movie?query=${this.state.searchString}${api}`)
@@ -51,7 +52,9 @@ class Search extends React.Component {
                 <div>
                     <div className="searchBar">
                         <input type="text" onChange={this.updateInput}></input>
+                        <Link to={this.state.path}>
                         <input type="Submit" onClick={this.handleSubmit} className="button"></input>
+                        </Link>
                     </div>
                     <div class="Nothing">
                         Nothing Found. Please change your search query
@@ -65,7 +68,9 @@ class Search extends React.Component {
                 <div>
                     <div className="searchBar">
                         <input type="text" onChange={this.updateInput}></input>
-                        <input type="Submit" onClick={this.handleSubmit} className="button"></input>
+                        <Link to={this.state.path}>
+                            <input type="Submit" onClick={this.handleSubmit} className="button"></input>
+                        </Link>
                     </div>
                     <div class="Nothing">
                         <div className="loading"><CircularProgress size={100}/> </div>
@@ -79,7 +84,9 @@ class Search extends React.Component {
                 <div>
                     <div class="searchBar">
                         <input type="text" onChange={this.updateInput}></input>
-                        <input type="Submit" onClick={this.handleSubmit} className="button"></input>
+                        <Link to={this.state.path}>
+                            <input type="Submit" onClick={this.handleSubmit} className="button"></input>
+                        </Link>
                     </div>
                     <MovieGrid items={this.state.items}/>
                 </div>
@@ -90,3 +97,4 @@ class Search extends React.Component {
 
 }
 export default Search
+

@@ -39,6 +39,7 @@
     justify-content: space-between;
 }
 .button {
+    flex:1;
     background-color: #4CAF50; /* Green */
     border: none;
     color: white;
@@ -50,6 +51,14 @@
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 20px;
+
+}
+.rating{
+    background-color: red;
+    width:30px;
+    height:25px;
+    border-radius: 5px;
+    text-align: center;
 }
 #hoverbar{
     height:30%;
@@ -69,17 +78,19 @@ h1 {
 
 }
 .overview {
-    font-size: 10px;
+    flex:2;
+    font-size: 20px;
     font-family: "Poppins";
     font-weight: normal;
      text-align: left;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 50ch;
+    max-width: 75ch;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
 }
+
 img {
     border-radius: 5%;
 }
