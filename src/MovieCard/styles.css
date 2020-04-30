@@ -23,7 +23,7 @@
     transition: .5s ease;
     opacity:0;
     color: white;
-    font-size: 20px;
+    font-size: 10px;
     padding: 20px;
     text-align: center;
 }
@@ -56,10 +56,13 @@
 }
 .rating{
     background-color: red;
-    width:30px;
-    height:25px;
+    width:20px;
+    height:20px;
     border-radius: 5px;
     text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
 }
 #hoverbar{
     height:30%;
