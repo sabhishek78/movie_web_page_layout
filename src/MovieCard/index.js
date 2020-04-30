@@ -18,10 +18,7 @@ class MovieCard extends React.Component {
                                 <div className="overview">
                                     {this.props.overview}
                                 </div>
-
-                                    <div className="rating">{this.props.rating}</div>
-
-
+                                <div className="rating">{this.props.rating}</div>
                             </div>
                         </div>
                     </div>

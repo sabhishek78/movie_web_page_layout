@@ -29,7 +29,7 @@ class MovieDetail extends React.Component {
         if(movie!==null){
             return (
                 <div className="container" >
-                    <div className="box">
+                    <div className="box" style={{position:"absolute"}}>
                         <img class="background-image" src={'https://image.tmdb.org/t/p/original/'+
                         movie.backdrop_path}/>
                     </div>
