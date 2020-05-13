@@ -13,13 +13,14 @@ class HomePage extends React.Component {
             items: [],
             isLoaded: false,
             query:this.props.match != null ? this.props.match.params.query : null,
+            pageNumber:1,
         };
     }
 
     componentDidMount() {
         let url;
         if (this.state.query == null)
-            url = `https://api.themoviedb.org/3/discover/movie?api_key=74c8f4090bcdc0cee9cda4752bd58557&sort_by=revenue.desc`;
+            url = `https://api.themoviedb.org/3/discover/movie?api_key=74c8f4090bcdc0cee9cda4752bd58557&page=1`;
         else {
             url = `https://api.themoviedb.org/3/search/movie?query=${this.state.query}&api_key=74c8f4090bcdc0cee9cda4752bd58557`;
         }
@@ -31,10 +32,27 @@ class HomePage extends React.Component {
                     isLoaded: true,
                     items: data.results,
                 });
-
             });
     }
+   goToPage(count){
+       let url;
 
+       if (this.state.query == null)
+           url = `https://api.themoviedb.org/3/discover/movie?api_key=74c8f4090bcdc0cee9cda4752bd58557&page=${this.state.pageNumber+count}`;
+       else {
+           url = `https://api.themoviedb.org/3/search/movie?query=${this.state.query}&api_key=74c8f4090bcdc0cee9cda4752bd58557`;
+       }
+       fetch(url)
+           .then(res => res.json())
+           .then(data => {
+               console.log(data.results);
+               this.setState({
+                   isLoaded: true,
+                   items: data.results,
+                   pageNumber:this.state.pageNumber+count,
+               });
+           });
+   }
     render() {
         if (!this.state.isLoaded) {
             return <div className="fullscreen" ><CircularProgress size={100}/> </div>;
@@ -45,6 +63,9 @@ class HomePage extends React.Component {
                         <Link to="/Search" className="button">Search</Link>
                     </div>
                     <MovieGrid items={this.state.items}/>
+                    {(this.state.pageNumber!==1) &&<button onClick={()=>this.goToPage(-1)}>Previous</button>}
+
+                    <button onClick={()=>this.goToPage(1)}>Next</button>
                 </div>
             );
         }

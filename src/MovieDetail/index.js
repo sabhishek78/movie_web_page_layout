@@ -2,6 +2,7 @@ import React from "react";
 import './moviedetail.css';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import {BrowserRouter as Router,Link,Switch,Route} from "react-router-dom";
+import VideoThumbnail from 'react-video-thumbnail';
 class MovieDetail extends React.Component {
     constructor(props) {
         super(props);
@@ -12,17 +13,19 @@ class MovieDetail extends React.Component {
         };
     }
     componentDidMount() {
-        this.getMovieDetails()
+        this.getMovieDetails();
+
     }
 
     async getMovieDetails() {
         var poster_path;
-        var movieDataLink="https://api.themoviedb.org/3/movie/"+this.state.id.toString()+"?api_key=74c8f4090bcdc0cee9cda4752bd58557";
+        var movieDataLink="https://api.themoviedb.org/3/movie/"+this.state.id.toString()+"?api_key=74c8f4090bcdc0cee9cda4752bd58557&append_to_response=videos";
         var res=await fetch(movieDataLink);
             var data = await res.json();
             this.setState({
              movie:data,
          })
+        console.log(JSON.stringify(this.state.movie));
     }
     render() {
         const movie=this.state.movie;
@@ -40,6 +43,22 @@ class MovieDetail extends React.Component {
                                 movie.poster_path}/>
                             </div>
                             <div className="column">
+
+                                <div className="videoThumbnail">
+                                    <VideoThumbnail
+                                        videoUrl={"https://www.youtube.com/watch?v="+movie.videos.results[0].key}
+                                        thumbnailHandler={(thumbnail) => console.log(thumbnail)}
+                                        width={120}
+                                        height={80}
+                                    />
+
+                                </div>
+                                <div className="row">
+
+                                    <a href={"https://www.youtube.com/watch?v="+movie.videos.results[0].key} style={{textDecoration: 'none'}} target="_blank">
+                                        <button className="button2">Watch Trailer</button></a>
+
+                                </div>
                                 <div className="content">
                                     <h1 className="title">{movie.original_title}</h1>
                                     <p className="description">{movie.overview}</p>
