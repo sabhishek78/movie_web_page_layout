@@ -6,7 +6,7 @@
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/HomePage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/HomePage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieDetail/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieDetail/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HomePage/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/HomePage/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +125,20 @@
       <workItem from="1589036439653" duration="594000" />
       <workItem from="1589168037240" duration="14000" />
       <workItem from="1589168356898" duration="900000" />
-      <workItem from="1589355822014" duration="6858000" />
+      <workItem from="1589355822014" duration="7000000" />
+      <workItem from="1589434937551" duration="509000" />
+      <workItem from="1589435469373" duration="835000" />
+      <workItem from="1589437308750" duration="1164000" />
+      <workItem from="1589440738042" duration="599000" />
+      <workItem from="1589443668173" duration="131000" />
+      <workItem from="1589443815267" duration="599000" />
+      <workItem from="1589445982087" duration="124000" />
+      <workItem from="1589532456117" duration="835000" />
+      <workItem from="1589533305922" duration="1035000" />
+      <workItem from="1589629238526" duration="1760000" />
+      <workItem from="1589631016683" duration="1470000" />
+      <workItem from="1589638096480" duration="162000" />
+      <workItem from="1589641780004" duration="538000" />
     </task>
     <task id="LOCAL-00001" summary="successfully passed movie id to movedetails page">
       <created>1586327051095</created>
@@ -225,7 +238,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588244921188</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="previous next button added. &#10;Video thumbnail added.">
+      <created>1589363718840</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1589363718840</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,36 +263,37 @@
     <MESSAGE value="changes implemented" />
     <MESSAGE value="1.overview font made smaller&#10;2. movie title aligned to the left,&#10;3. movie rating centered" />
     <MESSAGE value="fit and finish complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="fit and finish complete" />
+    <MESSAGE value="previous next button added. &#10;Video thumbnail added." />
+    <option name="LAST_COMMIT_MESSAGE" value="previous next button added. &#10;Video thumbnail added." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="391" y="0" key="CommitChangelistDialog2" timestamp="1588244920657">
+    <state x="391" y="0" key="CommitChangelistDialog2" timestamp="1589363718065">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="391" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1588244920657" />
+    <state x="391" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1589363718065" />
     <state x="610" y="307" key="Github.ShareDialog" timestamp="1585742405065">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="610" y="307" key="Github.ShareDialog/0.0.1536.824@0.0.1536.824" timestamp="1585742405065" />
-    <state width="1515" height="5" key="GridCell.Tab.0.bottom" timestamp="1589363271264">
+    <state width="1515" height="268" key="GridCell.Tab.0.bottom" timestamp="1589532606738">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="5" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589363271264" />
-    <state width="1515" height="5" key="GridCell.Tab.0.center" timestamp="1589363271264">
+    <state width="1515" height="268" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589532606738" />
+    <state width="1515" height="268" key="GridCell.Tab.0.center" timestamp="1589532606738">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="5" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1589363271264" />
-    <state width="1515" height="5" key="GridCell.Tab.0.left" timestamp="1589363271264">
+    <state width="1515" height="268" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1589532606738" />
+    <state width="1515" height="268" key="GridCell.Tab.0.left" timestamp="1589532606737">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="5" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1589363271264" />
-    <state width="1515" height="5" key="GridCell.Tab.0.right" timestamp="1589363271264">
+    <state width="1515" height="268" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1589532606737" />
+    <state width="1515" height="268" key="GridCell.Tab.0.right" timestamp="1589532606738">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="5" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1589363271264" />
-    <state x="361" y="141" key="Vcs.Push.Dialog.v2" timestamp="1588244922673">
+    <state width="1515" height="268" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1589532606738" />
+    <state x="361" y="141" key="Vcs.Push.Dialog.v2" timestamp="1589363720772">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="141" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1588244922673" />
+    <state x="361" y="141" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1589363720772" />
   </component>
 </project>
