@@ -70,20 +70,23 @@ class HomePage extends React.Component {
                         <Link to="/Search" className="button">Search</Link>
                     </div>
                     <MovieGrid items={this.state.pageItems}/>
-                    <div className={"pagenation"}>
-                        <ReactPaginate
-                            previousLabel={"prev"}
-                            nextLabel={"next"}
-                            breakLabel={"..."}
-                            breakClassName={"break-me"}
-                            pageCount={this.state.pageCount}
-                            marginPagesDisplayed={2}
-                            pageRangeDisplayed={5}
-                            onPageChange={this.handlePageClick}
-                            containerClassName={"pagination"}
-                            subContainerClassName={"pages pagination"}
-                            activeClassName={"active"}/>
+                    <div className="searchBar">
+                        <div className={"pagenation"}>
+                            <ReactPaginate
+                                previousLabel={"prev"}
+                                nextLabel={"next"}
+                                breakLabel={"..."}
+                                breakClassName={"break-me"}
+                                pageCount={this.state.pageCount}
+                                marginPagesDisplayed={2}
+                                pageRangeDisplayed={5}
+                                onPageChange={this.handlePageClick}
+                                containerClassName={"pagination"}
+                                subContainerClassName={"pages pagination"}
+                                activeClassName={"active"}/>
+                        </div>
                     </div>
+
                 </div>
             );
         }
