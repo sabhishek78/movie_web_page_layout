@@ -13,7 +13,11 @@ class HomePage extends React.Component {
             items: [],
             isLoaded: false,
             query:this.props.match != null ? this.props.match.params.query : null,
-            pageNumber:1,
+            pageCount:0,
+            offset: 0,
+            pageItems:[],
+            perPage: 8,
+            currentPage: 0
         };
     }
 
@@ -61,12 +65,11 @@ class HomePage extends React.Component {
                 <div>
                     <div class="searchBar">
                         <Link to="/Search" className="button">Search</Link>
-
-                    <MovieGrid items={this.state.items}/>
-                    {(this.state.pageNumber!==1) &&<button className="button" onClick={()=>this.goToPage(-1)}>Previous</button>}
-
-                    <button className="button"  onClick={()=>this.goToPage(1)}>Next</button>
                     </div>
+                    <MovieGrid items={this.state.items}/>
+                    {(this.state.pageNumber!==1) &&<button onClick={()=>this.goToPage(-1)}>Previous</button>}
+
+                    <button onClick={()=>this.goToPage(1)}>Next</button>
                 </div>
             );
         }
